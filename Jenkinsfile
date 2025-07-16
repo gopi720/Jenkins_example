@@ -13,5 +13,10 @@ pipeline{
                 echo "this is build stage"
             }
         }
+        stage("scanner"){
+            steps{
+                echo "this is code scanning stage"
+            }
+        }
     }
 }
