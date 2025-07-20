@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    parametrs{
+        choice(name:'Environment', choices: ['dev', 'qa', 'prod'])
+    }
     stages{
         stage("git checkout"){
             steps{
@@ -8,7 +11,7 @@ pipeline{
         }
         stage("build"){
             steps{
-                echo "this is build stage"
+                echo "this is build on ${params.Environment}"
             }
         }
         stage("scanner"){
