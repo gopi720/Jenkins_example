@@ -16,7 +16,7 @@ pipeline{
         }
         stage("scanner"){
             steps{
-                echo "this is code scanning stage"
+                echo "this is code scanning ${params.Environmen}"
             }
         }
     }
